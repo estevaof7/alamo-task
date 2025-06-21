@@ -47,9 +47,11 @@ export function Routines({
                       {component.brand ? ` (${component.brand})` : ''}
                     </p>
                   ))}
-                  <p className="text-sm mt-1 italic text-gray-500">
-                    Observação: {routine.observations}
-                  </p>
+                  {routine.observations && (
+                    <p className="text-sm mt-1 italic text-gray-500">
+                      Observação: {routine.observations}
+                    </p>
+                  )}
                 </div>
               </div>
 

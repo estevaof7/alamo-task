@@ -153,7 +153,13 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const search = searchParams.get('search');
 
-    const labRoutineFiltered = labRoutine.filter((procedure) =>
+    const sortedRoutine = [...labRoutine].sort((a, b) => {
+      const timeA = Number(a.time.replace(':', ''));
+      const timeB = Number(b.time.replace(':', ''));
+      return timeA - timeB;
+    });
+
+    const labRoutineFiltered = sortedRoutine.filter((procedure) =>
       procedure.title.toLowerCase().includes(search?.toLowerCase() || '')
     );
 
@@ -167,8 +173,8 @@ export async function GET(request: NextRequest) {
     }
 
     return NextResponse.json({
-      data: labRoutine,
-      total: labRoutine.length,
+      data: sortedRoutine,
+      total: sortedRoutine.length,
       success: true,
       message: 'Procedimentos de laboratório carregados com sucesso'
     });

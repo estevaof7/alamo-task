@@ -114,11 +114,29 @@ export function ModalCreateRoutine() {
 
         <div className="grid gap-2">
           <Label>Nome da solução principal</Label>
-          <Input {...register('mainSolution.name')} />
+          <Input
+            {...register('mainSolution.name', {
+              required: 'O nome é obrigatório'
+            })}
+          />
+          {errors.mainSolution?.name && (
+            <p className="text-red-500 text-sm">
+              {errors.mainSolution.name.message}
+            </p>
+          )}
         </div>
         <div className="grid gap-2">
           <Label>Volume da solução principal</Label>
-          <Input {...register('mainSolution.volume')} />
+          <Input
+            {...register('mainSolution.volume', {
+              required: 'O volume é obrigatório'
+            })}
+          />
+          {errors.mainSolution?.volume && (
+            <p className="text-red-500 text-sm">
+              {errors.mainSolution.volume.message}
+            </p>
+          )}
         </div>
 
         <div className="grid gap-2">
