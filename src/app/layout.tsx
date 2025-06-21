@@ -5,7 +5,7 @@ import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar';
 import { AppSidebar } from './components/app-sidebar';
 import NavBar from './components/nav-bar';
 import Providers from '@/providers/query';
-import { BreakPointView } from './components/breakpoint-view';
+// import { BreakPointView } from './components/breakpoint-view';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

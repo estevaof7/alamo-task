@@ -5,10 +5,10 @@ export const getPageTitle = (pathname: string) => {
 
   const routeTitles: Record<string, string> = {
     'pagina-inicial': 'Página Inicial',
-    'cadastros': 'Cadastros',
-    'clientes': 'Clientes',
-    'agenda': 'Agenda',
-    'financeiro': 'Financeiro',
+    cadastros: 'Cadastros',
+    clientes: 'Clientes',
+    agenda: 'Agenda',
+    financeiro: 'Financeiro'
   };
 
   return routeTitles[path] || 'Cadastros';
