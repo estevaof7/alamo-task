@@ -40,7 +40,7 @@ export default function RootLayout({
               <NavBar />
               {children}
             </main>
-            <BreakPointView />
+            {/* <BreakPointView /> */}
           </SidebarProvider>
         </Providers>
       </body>
