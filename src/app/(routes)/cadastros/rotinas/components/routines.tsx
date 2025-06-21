@@ -56,12 +56,20 @@ export function Routines({
               </div>
 
               <div className="flex flex-col gap-4 mt-2 text-sm">
-                <span>CHO: {routine.measurements.CHO}g</span>
-                <span>PTN: {routine.measurements.PTN}g</span>
-                <span>LIP: {routine.measurements.LIP}g</span>
-                <div className="mt-1 text-sm text-blue-700 font-semibold">
-                  {routine.measurements.absorbance} mAU
-                </div>
+                {routine.measurements.CHO && (
+                  <span>CHO: {routine.measurements.CHO}g</span>
+                )}
+                {routine.measurements.PTN && (
+                  <span>PTN: {routine.measurements.PTN}g</span>
+                )}
+                {routine.measurements.LIP && (
+                  <span>LIP: {routine.measurements.LIP}g</span>
+                )}
+                {routine.measurements.absorbance && (
+                  <div className="mt-1 text-sm text-secondary font-semibold">
+                    {routine.measurements.absorbance} mAU
+                  </div>
+                )}
               </div>
             </div>
           ))}

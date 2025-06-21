@@ -57,7 +57,7 @@ export function ModalCreateRoutine() {
   const time = watch('time');
 
   const formatTime = (value: string) => {
-    const digits = value.replace(/\D/g, '').slice(0, 4); // só números e no máximo 4 dígitos
+    const digits = value.replace(/\D/g, '').slice(0, 4);
     if (digits.length <= 2) return digits;
     return `${digits.slice(0, 2)}:${digits.slice(2)}`;
   };
@@ -145,16 +145,37 @@ export function ModalCreateRoutine() {
             <div key={field.id} className="grid gap-2 border rounded p-2">
               <Input
                 placeholder="Nome"
-                {...register(`components.${index}.name` as const)}
+                {...register(`components.${index}.name` as const, {
+                  required: 'O nome é obrigatório'
+                })}
               />
+              {errors.components?.[index]?.name && (
+                <p className="text-red-500 text-sm">
+                  {errors.components[index].name.message}
+                </p>
+              )}
               <Input
                 placeholder="Quantidade"
-                {...register(`components.${index}.quantity` as const)}
+                {...register(`components.${index}.quantity` as const, {
+                  required: 'A quantidade é obrigatória'
+                })}
               />
+              {errors.components?.[index]?.quantity && (
+                <p className="text-red-500 text-sm">
+                  {errors.components[index].quantity.message}
+                </p>
+              )}
               <Input
                 placeholder="Unidade"
-                {...register(`components.${index}.unit` as const)}
+                {...register(`components.${index}.unit` as const, {
+                  required: 'A unidade é obrigatória'
+                })}
               />
+              {errors.components?.[index]?.unit && (
+                <p className="text-red-500 text-sm">
+                  {errors.components[index].unit.message}
+                </p>
+              )}
               <Input
                 placeholder="Marca (opcional)"
                 {...register(`components.${index}.brand` as const)}
