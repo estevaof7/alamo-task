@@ -26,18 +26,16 @@ export default function RoutinesPage() {
 
   return (
     <div>
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-semibold">
-          Gestão de rotinas de laboratório
-        </h1>
+      <div className="flex justify-between items-center mb-6 font-semibold">
+        <h1 className="text-2xl">Gestão de rotinas de laboratório</h1>
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="bg-secondary hover:bg-purple-700 cursor-pointer">
+            <Button className="bg-secondary hover:bg-purple-700 cursor-pointer h-7">
               <Image
                 src="/img/icons/plus-icon.svg"
                 alt="Ícone de adicionar"
-                width={15}
-                height={15}
+                width={13}
+                height={13}
               />
               <span>Adicionar rotina</span>
             </Button>
@@ -57,11 +55,11 @@ export default function RoutinesPage() {
             setSearch={setSearch}
             search={search}
           />
-          <Button className="bg-secondary hover:bg-purple-700 cursor-pointer">
+          <Button className="bg-secondary hover:bg-purple-700 cursor-pointer h-7">
             Buscar
           </Button>
         </form>
-        <Button className="bg-black hover:bg-gray-700 cursor-pointer">
+        <Button className="bg-[#0A2540] hover:bg-gray-700 cursor-pointer h-7">
           Filtragem Avançada
         </Button>
       </div>

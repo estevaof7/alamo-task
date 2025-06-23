@@ -56,7 +56,7 @@ const cadastrosItem = {
 
 export function AppSidebar() {
   return (
-    <Sidebar className="border-r">
+    <Sidebar className="border-r text-primary font-semibold">
       <SidebarHeader className="p-4 border-b">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-gray-300 rounded-full flex items-center justify-center">
@@ -69,9 +69,7 @@ export function AppSidebar() {
             />
           </div>
           <div>
-            <p className="text-sm font-medium text-gray-900">
-              Estêvão Ferreira
-            </p>
+            <p className="text-sm">Estêvão Ferreira</p>
           </div>
         </div>
       </SidebarHeader>
@@ -95,9 +93,7 @@ export function AppSidebar() {
                           width={20}
                           height={20}
                         />
-                        <span className="text-sm font-medium">
-                          {item.title}
-                        </span>
+                        <span className="text-sm">{item.title}</span>
                       </>
                     </NavLink>
                   </SidebarMenuButton>
@@ -120,9 +116,7 @@ export function AppSidebar() {
                         width={20}
                         height={20}
                       />
-                      <span className="text-sm font-medium">
-                        {cadastrosItem.title}
-                      </span>
+                      <span className="text-sm">{cadastrosItem.title}</span>
                     </div>
                   </div>
                 </SidebarMenuButton>
@@ -135,7 +129,7 @@ export function AppSidebar() {
                       >
                         <NavLink
                           href={subItem.url}
-                          className="flex items-center px-3 py-2 text-sm font-medium"
+                          className="flex items-center px-3 py-2 text-sm"
                         >
                           {subItem.title}
                         </NavLink>

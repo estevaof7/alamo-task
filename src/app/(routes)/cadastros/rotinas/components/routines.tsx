@@ -48,7 +48,7 @@ export function Routines({
                     </p>
                   ))}
                   {routine.observations && (
-                    <p className="text-sm mt-1 italic text-gray-500">
+                    <p className="text-sm mt-1 text-gray-500">
                       Observação: {routine.observations}
                     </p>
                   )}

@@ -9,19 +9,17 @@ export default function NavBar() {
   const href = usePathname();
 
   return (
-    <nav className="w-full bg-white z-10">
+    <nav className="w-full bg-white z-10 text-primary">
       <div className="flex items-center justify-between py-6 bg-white">
-        <h1 className="text-xl font-semibold text-gray-900">
-          {getPageTitle(href)}
-        </h1>
+        <h1 className="text-xl font-medium">{getPageTitle(href)}</h1>
 
         <div className="flex items-center space-x-4">
-          <span className="text-secondary font-medium">Alamo</span>
+          <Image src="/img/logo.svg" alt="Tarefas" width={58} height={58} />
 
           <Button
             variant="default"
             size="sm"
-            className="bg-secondary hover:bg-purple-700 text-white px-4 py-2 rounded-md text-sm font-medium cursor-pointer sm:after:content-['Tarefas'] sm:after:ml-2"
+            className="h-6 bg-secondary hover:bg-purple-700 text-white px-2 rounded-md text-sm font-semibold cursor-pointer sm:after:content-['Tarefas'] sm:after:ml-1"
           >
             <Image
               src="/img/icons/checklist-icon.svg"
